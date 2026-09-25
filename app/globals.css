@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import "tailwindcss";
+/* @plugin "daisyui"; */
 
 :root {
     --common-color: #c2f800;
@@ -32,4 +33,3 @@ body{
     border-radius:50px;
     border:2px solid var(--nav-manu-bg);
 }
-
