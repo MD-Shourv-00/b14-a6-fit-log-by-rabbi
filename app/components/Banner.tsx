@@ -30,7 +30,8 @@ const Banner = () => {
             </p>
 
             {/* Button */}
-            <button className="rounded-[5px] bg-(--common-color) px-5 py-3 text-[12px] font-bold uppercase text-(--primary-background) transition-opacity hover:opacity-90">
+            <button
+              className="cursor-pointer rounded-[5px] bg-(--common-color) px-5 py-3 text-[12px] font-bold uppercase text-(--primary-background) transition-opacity hover:opacity-90">
               Browse Workouts
             </button>
           </div>
