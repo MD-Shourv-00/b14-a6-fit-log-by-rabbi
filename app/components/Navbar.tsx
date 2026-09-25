@@ -11,8 +11,8 @@ const Navbar = () => {
   const activeMenu = usePathname();
   const [smallDevice, setSmallDevice] = useState(false);
 
-  const handleHamburgerMenu = () => {
-    setSmallDevice((prev) => !prev);
+  const handleHamburgerMenu = (getValue: boolean) => {
+    setSmallDevice(getValue);
   };
 
   const handleMenuClick = () => {
@@ -81,8 +81,8 @@ const Navbar = () => {
         {/* Mobile Right Side */}
         <div className="flex items-center gap-4 sm:hidden">
           <Link
-            href="/"
-            className="flex items-center gap-1">
+            href="/my-plan"
+            className="flex items-center gap-1 hover:text-(--common-color)">
             Plan
             <span className="rounded-full bg-(--common-color) px-2 py-1 text-xs text-(--primary-background)">
               0
@@ -90,8 +90,8 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/"
-            className="flex items-center gap-1">
+            href="/my-plan"
+            className="flex items-center gap-1 hover:text-(--common-color)">
             Saved
             <span className="rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--secondary-text-color)">
               0
@@ -100,8 +100,7 @@ const Navbar = () => {
 
           <button
             type="button"
-            onClick={handleHamburgerMenu}
-            aria-label="Toggle navigation menu"
+            onClick={() => handleHamburgerMenu(true)}
             className="text-xl">
             <GiHamburgerMenu />
           </button>
