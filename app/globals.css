@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import "tailwindcss";
+
+:root {
+    --common-color: #c2f800;
+    --nav-manu-bg: #1a2312;
+    --primary-background: #1e1e1e;
+    --secondary-background: #222630;
+    --primary-text-color: #ffffff;
+    --secondary-text-color: #9ca3af;
+    --primary-font: "Oswald",
+        sans-serif;
+    --secondary-font: "Inter",
+        sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: var(--secondary-font);
+    background-color: var(--primary-background);
+    color: var(--secondary-text-color);
+}
+
+.manuCurrentState{
+    color: var(--common-color);
+    background-color: var(--nav-manu-bg);
+    padding: 7px 12px;
+    border-radius:50px;
+    border:2px solid var(--nav-manu-bg);
+}
+
