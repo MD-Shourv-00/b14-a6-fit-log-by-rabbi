@@ -57,7 +57,7 @@ const Navbar = ()=>{
         setSmallDevice(false);
     };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
-        className: "relative mb-10 border-b border-b-(--secondary-background) py-4",
+        className: "mb-10 border-b border-b-(--secondary-background) py-4",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "container mx-auto flex items-center justify-between px-4",
@@ -145,7 +145,7 @@ const Navbar = ()=>{
                                 children: [
                                     "Saved",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "rounded-full border-2 border-(--secondary-text-color) px-3 py-1 text-sm",
+                                        className: "rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm",
                                         children: "0"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Navbar.tsx",
@@ -192,7 +192,7 @@ const Navbar = ()=>{
                                 children: [
                                     "Saved",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--secondary-text-color)",
+                                        className: "rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)",
                                         children: "0"
                                     }, void 0, false, {
                                         fileName: "[project]/app/components/Navbar.tsx",

@@ -74,7 +74,7 @@ const Banner = ()=>{
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mb-6 max-w-[500px] text-[15px] leading-6 text-(--secondary-text-color) max-lg:mx-auto",
+                                className: "mb-6 max-w-[500px] text-[15px] leading-6 text-(--primary-text-color) max-lg:mx-auto",
                                 children: "FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up."
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Banner.tsx",
@@ -113,7 +113,7 @@ const Banner = ()=>{
                 className: "mx-auto md:my-10"
             }, void 0, false, {
                 fileName: "[project]/app/components/Banner.tsx",
-                lineNumber: 42,
+                lineNumber: 41,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]

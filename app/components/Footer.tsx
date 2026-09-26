@@ -2,7 +2,7 @@ import { FaDumbbell } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="border-y border-(--secondary-text-color)">
+    <footer className="border-t border-t-(--secondary-background)">
       <div className="flex justify-between items-center container mx-auto py-4 max-lg:flex-col gap-y-2 max-lg:items-center">
         {/* left side footer logo */}
         <div className="flex gap-2 items-center">

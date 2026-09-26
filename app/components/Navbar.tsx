@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative mb-10 border-b border-b-(--secondary-background) py-4">
+    <nav className="mb-10 border-b border-b-(--secondary-background) py-4">
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -72,7 +72,7 @@ const Navbar = () => {
             href="/"
             className="flex items-center gap-2">
             Saved
-            <span className="rounded-full border-2 border-(--secondary-text-color) px-3 py-1 text-sm">
+            <span className="rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm">
               0
             </span>
           </Link>
@@ -93,7 +93,7 @@ const Navbar = () => {
             href="/my-plan"
             className="flex items-center gap-1 hover:text-(--common-color)">
             Saved
-            <span className="rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--secondary-text-color)">
+            <span className="rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)">
               0
             </span>
           </Link>

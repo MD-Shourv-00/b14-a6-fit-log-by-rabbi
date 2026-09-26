@@ -11,6 +11,7 @@ interface PropsType {
 
 const ExerciseCard = ({ exerDataObj }: PropsType) => {
   const {
+    id,
     name,
     image,
     muscleGroups,
@@ -21,7 +22,7 @@ const ExerciseCard = ({ exerDataObj }: PropsType) => {
   } = exerDataObj;
 
   return (
-    <Link href={"/"}>
+    <Link href={`/${id}`}>
       <div className="w-full overflow-hidden rounded-[18px] border-2 border-(--secondary-background) bg-(--primary-background) font-(family-name:--primary-font)border-2 hover:border-(--common-color) duration-500 ease-in-out">
         {/* Card image */}
         <div className="h-[250px] w-full overflow-hidden">
@@ -55,7 +56,7 @@ const ExerciseCard = ({ exerDataObj }: PropsType) => {
           </h3>
 
           {/* Workout equipment */}
-          <p className="mb-5 text-[14px] text-(--secondary-text-color)">
+          <p className="mb-5 text-[14px] text-(--primary-text-color)">
             {equipment}
           </p>
 
@@ -63,7 +64,7 @@ const ExerciseCard = ({ exerDataObj }: PropsType) => {
           <hr className="mb-4 w-full bg-(--secondary-background)" />
 
           {/* Workout information */}
-          <div className="flex items-center gap-5 text-[13px] text-(--secondary-text-color)">
+          <div className="flex items-center gap-5 text-[13px] text-(--primary-text-color)">
             <span className="flex items-center gap-1.5">
               <span className="text-[15px]">
                 <MdOutlineWatchLater />

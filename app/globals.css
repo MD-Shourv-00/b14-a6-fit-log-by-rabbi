@@ -8,28 +8,28 @@
     --primary-background: #1e1e1e;
     --secondary-background: #222630;
     --primary-text-color: #ffffff;
-    --secondary-text-color: #9ca3af;
+    --primary-text-color: #9ca3af;
     --primary-font: "Oswald",
         sans-serif;
     --secondary-font: "Inter",
         sans-serif;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
 
-body{
+body {
     font-family: var(--secondary-font);
     background-color: var(--primary-background);
-    color: var(--secondary-text-color);
+    color: var(--primary-text-color);
 }
 
-.manuCurrentState{
+.manuCurrentState {
     color: var(--common-color);
     background-color: var(--nav-manu-bg);
     padding: 7px 12px;
-    border-radius:50px;
-    border:2px solid var(--nav-manu-bg);
+    border-radius: 50px;
+    border: 2px solid var(--nav-manu-bg);
 }
