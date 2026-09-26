@@ -10,7 +10,7 @@ import Link from "next/link";
 
 const MyPlanPage = () => {
   const dataState = useContext(ThemeContext);
-  if(!dataState){
+  if (!dataState) {
     return [];
   }
   const { todaysPlan, savedData } = dataState;
@@ -33,7 +33,7 @@ const MyPlanPage = () => {
 
       {/* tab and sort by section */}
 
-      <div className="my-10">
+      <div className="my-10 relative">
         <div className="tabs tabs-lift">
           <input
             type="radio"
@@ -63,7 +63,7 @@ const MyPlanPage = () => {
                 </p>
 
                 <Link
-                  href="/workouts"
+                  href="/"
                   className="rounded-full bg-(--common-color) px-5 py-2.5 text-[16px] font-bold text-(--primary-background) transition-opacity hover:opacity-90">
                   Go to workouts
                 </Link>
@@ -100,7 +100,7 @@ const MyPlanPage = () => {
                 </p>
 
                 <Link
-                  href="/workouts"
+                  href="/"
                   className="rounded-full bg-(--common-color) px-5 py-2.5 text-[16px] font-bold text-(--primary-background) transition-opacity hover:opacity-90">
                   Go to workouts
                 </Link>
@@ -110,8 +110,8 @@ const MyPlanPage = () => {
         </div>
 
         {/* sorting option */}
-        <div className="text-(--secondary-text-color)">
-          <span>Sort By:</span>
+        <div className="text-(--secondary-text-color) absolute top-0 right-0">
+          <span>Sort By:</span>{" "}
           <select
             defaultValue="duration"
             className="select select-secondary bg-(--secondary-background) border-none outline-none w-30 hover:text-(--common-color) ">

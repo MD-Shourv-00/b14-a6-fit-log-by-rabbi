@@ -6,8 +6,8 @@ import {
   FiCheck,
   FiClock,
   FiStar,
-  FiX,
 } from "react-icons/fi";
+import RemoveCardBtn from "./buttons/RemoveCardBtn";
 
 interface PropsType {
   todaysPlanData: ExerciseDataType;
@@ -76,9 +76,8 @@ const TodaysPlanCard = ({ todaysPlanData }: PropsType) => {
           Mark as Done
         </button>
 
-        <button className="ml-2 text-(--secondary-text-color) transition-colors hover:text-(--primary-text-color)">
-          <FiX size={17} />
-        </button>
+        {/* remove btn */}
+        <RemoveCardBtn todaysPlanData={todaysPlanData} />
       </div>
     </div>
   );

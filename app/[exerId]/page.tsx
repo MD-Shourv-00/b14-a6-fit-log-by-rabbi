@@ -3,7 +3,7 @@ import DetailsExerciseCard from "../components/Card/DetailsExerciseCard";
 async function singleExerciseDataFetching(getDynamicPath: string) {
   try {
     const res = await fetch(
-      `https://api.abcz.workers.dev/api/fitlog/${getDynamicPath}`,
+      `https://api.api-store.workers.dev/api/fitlog/${getDynamicPath}`,
     );
 
     if (!res.ok) {
