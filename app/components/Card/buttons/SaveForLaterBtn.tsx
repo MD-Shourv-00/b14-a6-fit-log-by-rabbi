@@ -38,7 +38,7 @@ const SaveForLaterBtn = ({
     <div>
       <button
         onClick={() => handleSavedBtn()}
-        className="flex items-center gap-2 rounded-[8px] border border-(--secondary-background) px-5 py-3 text-[13px] text-(--primary-text-color) hover:bg-(--nav-manu-bg) duration-300">
+        className="cursor-pointer flex items-center gap-2 rounded-[8px] border border-(--secondary-background) px-5 py-3 text-[13px] text-(--primary-text-color) hover:bg-(--nav-manu-bg) duration-300">
         <FiBookmark />
         Save for later
       </button>

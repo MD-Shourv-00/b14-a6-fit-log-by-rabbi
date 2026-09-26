@@ -45,7 +45,7 @@ const AddToTodayBtn = ({
     <div>
       <button
         onClick={() => handleAddTobtn()}
-        className="flex items-center gap-2 rounded-[8px] bg-(--common-color) px-5 py-3 text-[13px] font-bold text-(--primary-background) hover:bg-[#99c109] duration-300">
+        className="cursor-pointer flex items-center gap-2 rounded-[8px] bg-(--common-color) px-5 py-3 text-[13px] font-bold text-(--primary-background) hover:bg-[#99c109] duration-300">
         <FaRegCalendarPlus />
         Add to today&apos;s plan
       </button>

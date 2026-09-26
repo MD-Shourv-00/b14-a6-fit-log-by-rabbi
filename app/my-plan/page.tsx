@@ -1,7 +1,20 @@
-import StaticsCard from "../components/Card/StaticsCard";
+"use client";
 
-const myPlanPage = () => {
-    
+import { useContext } from "react";
+import StaticsCard from "../components/Card/StaticsCard";
+import { ThemeContext } from "../context/page";
+import TodaysPlanCard from "../components/Card/TodaysPlanCard";
+import { ExerciseDataType } from "../type/type";
+import SavedCard from "../components/Card/SavedCard";
+import Link from "next/link";
+
+const MyPlanPage = () => {
+  const dataState = useContext(ThemeContext);
+  if(!dataState){
+    return [];
+  }
+  const { todaysPlan, savedData } = dataState;
+
   return (
     // my plan page section
     <section className="container mx-auto">
@@ -29,7 +42,33 @@ const myPlanPage = () => {
             aria-label="Today's Plan"
           />
           <div className="tab-content p-6">
-            Tab content 1
+            {todaysPlan.length !== 0 ? (
+              todaysPlan.map(
+                (todaysPlanData: ExerciseDataType) => (
+                  <TodaysPlanCard
+                    key={todaysPlanData.id}
+                    todaysPlanData={todaysPlanData}
+                  />
+                ),
+              )
+            ) : (
+              <div className="flex h-[250px] w-full flex-col items-center justify-center rounded-[12px] border border-dashed border-(--secondary-background) bg-(--primary-background)">
+                <h2 className="mb-1 text-[24px] font-bold text-(--primary-text-color) font-(family-name:--primary-font)">
+                  NOTHING HERE YET
+                </h2>
+
+                <p className="mb-5 text-[14px] text-(--secondary-text-color)">
+                  Browse the library and add a lift to get
+                  today moving.
+                </p>
+
+                <Link
+                  href="/workouts"
+                  className="rounded-full bg-(--common-color) px-5 py-2.5 text-[16px] font-bold text-(--primary-background) transition-opacity hover:opacity-90">
+                  Go to workouts
+                </Link>
+              </div>
+            )}
           </div>
 
           <input
@@ -40,12 +79,39 @@ const myPlanPage = () => {
             defaultChecked
           />
           <div className="tab-content p-6">
-            Tab content 2
+            {savedData.length !== 0 ? (
+              savedData.map(
+                (saveDataObj: ExerciseDataType) => (
+                  <SavedCard
+                    key={saveDataObj.id}
+                    saveDataObj={saveDataObj}
+                  />
+                ),
+              )
+            ) : (
+              <div className="flex h-[250px] w-full flex-col items-center justify-center rounded-[12px] border border-dashed border-(--secondary-background) bg-(--primary-background)">
+                <h2 className="mb-1 text-[24px] font-bold text-(--primary-text-color) font-(family-name:--primary-font)">
+                  NOTHING HERE YET
+                </h2>
+
+                <p className="mb-5 text-[14px] text-(--secondary-text-color)">
+                  Browse the library and add a lift to get
+                  today moving.
+                </p>
+
+                <Link
+                  href="/workouts"
+                  className="rounded-full bg-(--common-color) px-5 py-2.5 text-[16px] font-bold text-(--primary-background) transition-opacity hover:opacity-90">
+                  Go to workouts
+                </Link>
+              </div>
+            )}
           </div>
         </div>
 
+        {/* sorting option */}
         <div className="text-(--secondary-text-color)">
-          <span>Sort By:</span> {/* sorting option */}
+          <span>Sort By:</span>
           <select
             defaultValue="duration"
             className="select select-secondary bg-(--secondary-background) border-none outline-none w-30 hover:text-(--common-color) ">
@@ -71,4 +137,4 @@ const myPlanPage = () => {
   );
 };
 
-export default myPlanPage;
+export default MyPlanPage;
