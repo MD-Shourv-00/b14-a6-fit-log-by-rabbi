@@ -39,13 +39,13 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$assets$2f$banner$2e$p
 ;
 const Banner = ()=>{
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "container mx-auto overflow-hidden rounded-[14px] border border-(--secondary-background) bg-(--secondary-background) font-(family-name:--primary-font) flex max-lg:flex-col justify-around",
+        className: "container mx-auto overflow-hidden rounded-[14px] border border-(--secondary-background) bg-(--secondary-background) flex max-lg:flex-col justify-around",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "relative z-10 flex min-h-[360px] items-center px-8 py-10 lg:px-12 max-lg:min-h-[420px] max-lg:justify-center max-lg:text-center",
                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "max-w-[570px]",
+                        className: "max-w-[570px] font-(family-name:--primary-font)  ",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                 className: "mb-5 text-[12px] font-bold uppercase text-(--common-color)",
@@ -56,7 +56,7 @@ const Banner = ()=>{
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "mb-4 text-[40px] font-black uppercase leading-[1.05] text-(--primary-text-color) sm:text-[48px] lg:text-[52px]",
+                                className: "mb-4 text-[40px] font-black uppercase leading-[1.05] text-(--primary-text-color) sm:text-[48px] lg:text-[52px] ",
                                 children: [
                                     "Train With Intent. Log",
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {
@@ -74,7 +74,7 @@ const Banner = ()=>{
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mb-6 max-w-[500px] text-[15px] leading-6 text-(--primary-text-color) max-lg:mx-auto",
+                                className: "mb-6 max-w-[500px] text-[15px] leading-6 text-(--secondary-text-color) max-lg:mx-auto",
                                 children: "FitLog is a dark, no-nonsense gym companion: pick a lift, lock it into today's plan, and watch the week's work add up."
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Banner.tsx",
@@ -82,7 +82,7 @@ const Banner = ()=>{
                                 columnNumber: 13
                             }, ("TURBOPACK compile-time value", void 0)),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "cursor-pointer rounded-[5px] bg-(--common-color) px-5 py-3 text-[12px] font-bold uppercase text-(--primary-background) transition-opacity hover:opacity-90",
+                                className: "cursor-pointer rounded-[5px] bg-(--common-color) px-5 py-3 text-[12px] font-bold uppercase text-(--primary-background) transition-opacity hover:opacity-90 ",
                                 children: "Browse Workouts"
                             }, void 0, false, {
                                 fileName: "[project]/app/components/Banner.tsx",

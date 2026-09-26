@@ -1,7 +1,7 @@
 import { ExerciseDataType } from "@/app/type/type";
 import Image from "next/image";
-import { FaRegCalendarPlus } from "react-icons/fa";
-import { FiBookmark } from "react-icons/fi";
+import AddToTodayBtn from "./buttons/AddToTodayBtn";
+import SaveForLaterBtn from "./buttons/SaveForLaterBtn";
 
 interface PropsType {
   singleExerciseData: ExerciseDataType;
@@ -140,15 +140,13 @@ const DetailsExerciseCard = ({
 
         {/* Buttons */}
         <div className="flex gap-3">
-          <button className="flex items-center gap-2 rounded-[8px] bg-(--common-color) px-5 py-3 text-[13px] font-bold text-(--primary-background) hover:bg-[#99c109] duration-300">
-            <FaRegCalendarPlus />
-            Add to today&apos;s plan
-          </button>
+          <AddToTodayBtn
+            singleExerciseData={singleExerciseData}
+          />
 
-          <button className="flex items-center gap-2 rounded-[8px] border border-(--secondary-background) px-5 py-3 text-[13px] text-(--primary-text-color) hover:bg-(--nav-manu-bg) duration-300">
-            <FiBookmark />
-            Save for later
-          </button>
+          <SaveForLaterBtn
+            singleExerciseData={singleExerciseData}
+          />
         </div>
       </div>
     </div>

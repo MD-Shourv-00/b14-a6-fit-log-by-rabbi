@@ -56,7 +56,7 @@ const ExerciseCard = ({ exerDataObj }: PropsType) => {
           </h3>
 
           {/* Workout equipment */}
-          <p className="mb-5 text-[14px] text-(--primary-text-color)">
+          <p className="mb-5 text-[14px] text-(--secondary-text-color)">
             {equipment}
           </p>
 

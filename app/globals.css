@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 @import "tailwindcss";
-/* @plugin "daisyui"; */
+@plugin "daisyui";  
 
 :root {
     --common-color: #c2f800;
@@ -8,7 +8,8 @@
     --primary-background: #1e1e1e;
     --secondary-background: #222630;
     --primary-text-color: #ffffff;
-    --primary-text-color: #9ca3af;
+    --secondary-text-color: #9ca3af;
+    --border-color:#48505faa;
     --primary-font: "Oswald",
         sans-serif;
     --secondary-font: "Inter",

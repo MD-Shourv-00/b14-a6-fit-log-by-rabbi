@@ -14,7 +14,7 @@ const Footer = () => {
 
         {/* right side copywrite text */}
         <div>
-          <p className="text-[12px] sm:text-[14px] ">
+          <p className="text-[12px] sm:text-[14px] text-(--secondary-text-color)">
             &copy; 2026 FitLog — Workout Library. Train
             hard, log honest.
           </p>

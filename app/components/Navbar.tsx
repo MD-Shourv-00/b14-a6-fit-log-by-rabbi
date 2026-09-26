@@ -20,7 +20,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="mb-10 border-b border-b-(--secondary-background) py-4">
+    <nav className="relative mb-10 border-b border-b-(--secondary-background) py-4">
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
@@ -60,7 +60,7 @@ const Navbar = () => {
         {/* Right Side */}
         <div className="hidden items-center gap-3 sm:flex">
           <Link
-            href="/"
+            href="/my-plan"
             className="flex items-center gap-2">
             Plan
             <span className="rounded-full bg-(--common-color) px-3 py-1 text-sm text-(--primary-background)">
@@ -69,7 +69,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="/"
+            href="/my-plan"
             className="flex items-center gap-2">
             Saved
             <span className="rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm">
@@ -78,7 +78,7 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Mobile Right Side */}
+        {/* mobile Right Side */}
         <div className="flex items-center gap-4 sm:hidden">
           <Link
             href="/my-plan"
@@ -101,7 +101,7 @@ const Navbar = () => {
           <button
             type="button"
             onClick={() => handleHamburgerMenu(true)}
-            className="text-xl">
+            className="text-xl cursor-pointer">
             <GiHamburgerMenu />
           </button>
         </div>
