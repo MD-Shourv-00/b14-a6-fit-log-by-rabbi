@@ -70,11 +70,11 @@ const SavedCard = ({ saveDataObj }: PropsType) => {
         <div className="flex gap-3 items-center max-md:flex-col max-sm:flex-row">
           {" "}
           <Link href={`/${id}`}>
-            <button className="max-sm:text-[12px] rounded-full border border-(--secondary-background) px-4 py-2 text-[12px] text-(--secondary-text-color) transition-colors hover:text-(--primary-text-color)">
+            <button className="cursor-pointer max-sm:text-[12px] rounded-full border border-(--secondary-background) px-4 py-2 text-[12px] text-(--secondary-text-color) transition-colors hover:text-(--primary-text-color)">
               View Details
             </button>
           </Link>
-          <button className="max-sm:text-[12px] flex items-center gap-1 rounded-full bg-(--common-color) text-[12px] font-bold text-(--primary-background) py-2 px-2">
+          <button className="cursor-pointer max-sm:text-[12px] flex items-center gap-1 rounded-full bg-(--common-color) text-[12px] font-bold text-(--primary-background) py-2 px-2">
             <FiCheck />
             Mark as Done
           </button>

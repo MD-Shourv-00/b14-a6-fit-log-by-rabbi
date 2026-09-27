@@ -5,11 +5,20 @@ import Link from "next/link";
 import navLogo from "@/app/assets/logo.png";
 import { usePathname } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../context/page";
 
 const Navbar = () => {
   const activeMenu = usePathname();
   const [smallDevice, setSmallDevice] = useState(false);
+
+  // // data loading form context.
+  const dataState = useContext(ThemeContext);
+
+  if (!dataState) {
+    throw new Error('null')
+  }
+  const { todaysPlan, savedData } = dataState;
 
   const handleHamburgerMenu = (getValue: boolean) => {
     setSmallDevice(getValue);
@@ -20,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50">
+    <nav className="sticky top-0 left-0 z-50">
       <div className="relative bg-(--primary-background) mb-10 border-b border-b-(--secondary-background) py-4">
         <div className="container mx-auto flex items-center justify-between px-4">
           {/* Logo */}
@@ -67,7 +76,7 @@ const Navbar = () => {
               className="flex items-center gap-2">
               Plan
               <span className="rounded-full bg-(--common-color) px-3 py-1 text-sm text-(--primary-background)">
-                0
+                {todaysPlan.length}
               </span>
             </Link>
 
@@ -76,7 +85,7 @@ const Navbar = () => {
               className="flex items-center gap-2">
               Saved
               <span className="rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm">
-                0
+                {savedData.length}
               </span>
             </Link>
           </div>
@@ -88,7 +97,7 @@ const Navbar = () => {
               className="flex items-center gap-1 hover:text-(--common-color)">
               Plan
               <span className="rounded-full bg-(--common-color) px-2 py-1 text-xs text-(--primary-background)">
-                0
+                {todaysPlan.length}
               </span>
             </Link>
 
@@ -97,7 +106,7 @@ const Navbar = () => {
               className="flex items-center gap-1 hover:text-(--common-color)">
               Saved
               <span className="rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)">
-                0
+                {savedData.length}
               </span>
             </Link>
 

@@ -37,9 +37,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$assets$2f$logo$2e$png
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/navigation.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2d$icons$2f$gi$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/react-icons/gi/index.mjs [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$context$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/context/page.tsx [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 ;
@@ -51,11 +53,11 @@ const Navbar = ()=>{
     const activeMenu = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const [smallDevice, setSmallDevice] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     // // data loading form context.
-    // const dataState = useContext(ThemeContext);
-    // if (!dataState) {
-    //   return [];
-    // }
-    // const { todaysPlan, savedData } = dataState;
+    const dataState = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useContext"])(__TURBOPACK__imported__module__$5b$project$5d2f$app$2f$context$2f$page$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["ThemeContext"]);
+    if (!dataState) {
+        throw new Error('null');
+    }
+    const { todaysPlan, savedData } = dataState;
     const handleHamburgerMenu = (getValue)=>{
         setSmallDevice(getValue);
     };
@@ -134,7 +136,8 @@ const Navbar = ()=>{
                                     children: [
                                         "Plan",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "rounded-full bg-(--common-color) px-3 py-1 text-sm text-(--primary-background)"
+                                            className: "rounded-full bg-(--common-color) px-3 py-1 text-sm text-(--primary-background)",
+                                            children: todaysPlan.length
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Navbar.tsx",
                                             lineNumber: 78,
@@ -152,7 +155,8 @@ const Navbar = ()=>{
                                     children: [
                                         "Saved",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm"
+                                            className: "rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm",
+                                            children: savedData.length
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Navbar.tsx",
                                             lineNumber: 87,
@@ -179,7 +183,8 @@ const Navbar = ()=>{
                                     children: [
                                         "Plan",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "rounded-full bg-(--common-color) px-2 py-1 text-xs text-(--primary-background)"
+                                            className: "rounded-full bg-(--common-color) px-2 py-1 text-xs text-(--primary-background)",
+                                            children: todaysPlan.length
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Navbar.tsx",
                                             lineNumber: 99,
@@ -197,7 +202,8 @@ const Navbar = ()=>{
                                     children: [
                                         "Saved",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)"
+                                            className: "rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)",
+                                            children: savedData.length
                                         }, void 0, false, {
                                             fileName: "[project]/app/components/Navbar.tsx",
                                             lineNumber: 108,
@@ -276,7 +282,7 @@ const Navbar = ()=>{
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };
-_s(Navbar, "UIT3sM6Uw3SWZAx7K6BA+Fy6dm0=", false, function() {
+_s(Navbar, "vFXKLH1mYGapAVqWvrBYvM9BAM4=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"]
     ];
@@ -335,4 +341,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=app_1zxb7pw._.js.map
+//# sourceMappingURL=app_0vr_x1s._.js.map

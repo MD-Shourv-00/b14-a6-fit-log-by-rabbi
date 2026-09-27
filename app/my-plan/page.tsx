@@ -1,14 +1,18 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import StaticsCard from "../components/Card/StaticsCard";
 import { ThemeContext } from "../context/page";
 import TodaysPlanCard from "../components/Card/TodaysPlanCard";
 import { ExerciseDataType } from "../type/type";
 import SavedCard from "../components/Card/SavedCard";
 import Link from "next/link";
+import SortUi from "../components/SortUi";
 
 const MyPlanPage = () => {
+  const [currentTab, setCurrentTab] =
+    useState<string>("todaysPlanTab");
+  // data loading form context.
   const dataState = useContext(ThemeContext);
   if (!dataState) {
     return [];
@@ -29,17 +33,24 @@ const MyPlanPage = () => {
         </p>
       </div>
       {/* statics section */}
-      <StaticsCard />
-
+      {currentTab === "todaysPlanTab" ? (
+        <StaticsCard todaysPlan={todaysPlan} />
+      ) : currentTab === "savedTab" ? (
+        <StaticsCard savedData={savedData} />
+      ) : (
+        ""
+      )}
       {/* tab and sort by section */}
-
       <div className="my-10 relative">
+        {/* tabs */}
         <div className="tabs tabs-lift">
           <input
             type="radio"
             name="my_tabs_3"
+            onChange={() => setCurrentTab("todaysPlanTab")}
             className="tab bg-(--secondary-background) text-(--primary-text-color) border-white"
             aria-label="Today's Plan"
+            defaultChecked
           />
           <div className="tab-content p-6 max-h-max min-h-[300px]">
             {todaysPlan.length !== 0 ? (
@@ -74,9 +85,9 @@ const MyPlanPage = () => {
           <input
             type="radio"
             name="my_tabs_3"
+            onChange={() => setCurrentTab("savedTab")}
             className="tab bg-(--secondary-background) text-(--primary-text-color)"
             aria-label="Saved"
-            defaultChecked
           />
           <div className="tab-content p-6">
             {savedData.length !== 0 ? (
@@ -114,25 +125,7 @@ const MyPlanPage = () => {
           <span className="text-[11px] sm:text-[14px]">
             Sort By:
           </span>{" "}
-          <select
-            defaultValue="duration"
-            className="select select-secondary bg-(--secondary-background) border-none outline-none w-30 hover:text-(--common-color) ">
-            <option
-              className="border border-(--border-color) my-1"
-              value={"rating"}>
-              Rating
-            </option>
-            <option
-              className="border border-(--border-color) my-1"
-              value={"duration"}>
-              Duration
-            </option>
-            <option
-              className="border border-(--border-color) my-1"
-              value={"calories"}>
-              Calories
-            </option>
-          </select>
+          {/* <SortUi /> */}
         </div>
       </div>
     </section>

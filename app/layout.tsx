@@ -30,8 +30,10 @@ export default function RootLayout({
       data-theme="light"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col">
-        <Navbar />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Navbar />
+          {children}
+        </ThemeProvider>
         <Footer />
         <ToastContainer />
       </body>

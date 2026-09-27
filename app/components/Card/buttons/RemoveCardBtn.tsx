@@ -46,7 +46,7 @@ const RemoveCardBtn = ({
     <div>
       <button
         onClick={handleRemoveBtn}
-        className="ml-2 text-(--secondary-text-color) transition-colors hover:text-(--primary-text-color)">
+        className="cursor-pointer ml-2 text-(--secondary-text-color) transition-colors hover:text-(--primary-text-color)">
         <FiX size={17} />
       </button>
     </div>
