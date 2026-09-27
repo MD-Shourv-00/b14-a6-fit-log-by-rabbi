@@ -10,6 +10,7 @@ import {
 import RemoveCardBtn from "./buttons/RemoveCardBtn";
 import { useState } from "react";
 import { IoMdDoneAll } from "react-icons/io";
+import { toast } from "react-toastify";
 
 interface PropsType {
   todaysPlanData: ExerciseDataType;
@@ -30,7 +31,7 @@ const TodaysPlanCard = ({ todaysPlanData }: PropsType) => {
   const [isDoneBtnClicked, setIsDoneBtnClicked] =
     useState<boolean>(false);
 
-    console.log(isDoneBtnClicked)
+  console.log(isDoneBtnClicked);
 
   return (
     <div className="flex w-full items-center rounded-[12px] border border-(--secondary-background) bg-(--primary-background) px-3 justify-between max-sm:flex-col my-7 ">
@@ -92,7 +93,10 @@ const TodaysPlanCard = ({ todaysPlanData }: PropsType) => {
             </button>
           ) : (
             <button
-              onClick={() => setIsDoneBtnClicked(true)}
+              onClick={() => {
+                setIsDoneBtnClicked(true);
+                toast.success("Done");
+              }}
               className={`cursor-pointer max-sm:text-[12px] flex items-center gap-1 rounded-full bg-(--common-color) text-[12px] font-bold text-(--primary-background) py-2 px-2`}>
               <FiCheck />
               Mark as Done

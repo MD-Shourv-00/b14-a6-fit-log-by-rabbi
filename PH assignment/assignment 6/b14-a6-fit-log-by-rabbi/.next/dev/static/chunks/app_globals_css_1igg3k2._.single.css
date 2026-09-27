@@ -1960,6 +1960,46 @@
       scale: 1.1;
     }
 
+    .card {
+      border-radius: var(--radius-box);
+      outline-offset: 2px;
+      outline: 2px solid #0000;
+      flex-direction: column;
+      transition: outline .2s ease-in-out;
+      display: flex;
+      position: relative;
+    }
+
+    .card:focus-visible, .card[aria-checked="true"] {
+      outline-color: currentColor;
+    }
+
+    .card:has( > :checked,  > :is([type="checkbox"], [type="radio"]):focus-visible) {
+      outline-color: currentColor;
+    }
+
+    .card:has( > :checked:focus-visible) {
+      outline-width: 4px;
+    }
+
+    .card[aria-checked="true"]:focus-visible {
+      outline-width: 4px;
+    }
+
+    .card[aria-checked="true"]:has( > :is([type="checkbox"], [type="radio"]):focus-visible) {
+      outline-width: 4px;
+    }
+
+    .card:has( > :is([type="checkbox"], [type="radio"])) {
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+
+    .card > :is([type="checkbox"], [type="radio"]) {
+      appearance: none;
+    }
+
     .tab-content {
       order: var(--tabcontent-order);
       --tabcontent-radius-ss: var(--radius-box);
@@ -2064,6 +2104,10 @@
       place-items: start;
       gap: .5rem;
       display: grid;
+    }
+
+    .aura:has( > .card,  > .alert) {
+      --aura-radius: var(--radius-box);
     }
 
     .aura:has( > .btn,  > .input,  > .select) {
@@ -2231,6 +2275,30 @@
 
   .visible {
     visibility: visible;
+  }
+
+  @layer daisyui.l1.l2.l3.l4 {
+    .card figure:first-child {
+      border-start-start-radius: inherit;
+      border-start-end-radius: inherit;
+      border-end-end-radius: unset;
+      border-end-start-radius: unset;
+      overflow: hidden;
+    }
+
+    .card figure:last-child {
+      border-start-start-radius: unset;
+      border-start-end-radius: unset;
+      border-end-end-radius: inherit;
+      border-end-start-radius: inherit;
+      overflow: hidden;
+    }
+
+    .card figure {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+    }
   }
 
   .absolute {
