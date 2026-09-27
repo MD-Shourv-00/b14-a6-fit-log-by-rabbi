@@ -17,7 +17,7 @@ const MyPlanPage = () => {
 
   return (
     // my plan page section
-    <section className="container mx-auto">
+    <section className="container mx-auto max-sm:px-1.5">
       {/* small title */}
       <div className="max-md:text-center">
         <h1 className="text-3xl text-(--primary-text-color) font-(family-name:--primary-font)">
@@ -41,7 +41,7 @@ const MyPlanPage = () => {
             className="tab bg-(--secondary-background) text-(--primary-text-color) border-white"
             aria-label="Today's Plan"
           />
-          <div className="tab-content p-6">
+          <div className="tab-content p-6 max-h-max min-h-[300px]">
             {todaysPlan.length !== 0 ? (
               todaysPlan.map(
                 (todaysPlanData: ExerciseDataType) => (
@@ -111,7 +111,9 @@ const MyPlanPage = () => {
 
         {/* sorting option */}
         <div className="text-(--secondary-text-color) absolute top-0 right-0">
-          <span>Sort By:</span>{" "}
+          <span className="text-[11px] sm:text-[14px]">
+            Sort By:
+          </span>{" "}
           <select
             defaultValue="duration"
             className="select select-secondary bg-(--secondary-background) border-none outline-none w-30 hover:text-(--common-color) ">

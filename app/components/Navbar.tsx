@@ -20,26 +20,104 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="relative mb-10 border-b border-b-(--secondary-background) py-4">
-      <div className="container mx-auto flex items-center justify-between px-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src={navLogo}
-            alt="Dumbbell logo"
-            width={27}
-            height={25}
-          />
-
-          <span className="font-(family-name:--primary-font) text-2xl text-(--primary-text-color)">
-            FITLOG
-          </span>
-        </Link>
-
-        {/* Desktop Menu */}
-        <div className="hidden items-center gap-10 sm:flex">
+    <nav className="sticky top-0 z-50">
+      <div className="relative bg-(--primary-background) mb-10 border-b border-b-(--secondary-background) py-4">
+        <div className="container mx-auto flex items-center justify-between px-4">
+          {/* Logo */}
           <Link
             href="/"
+            className="flex items-center gap-2">
+            <Image
+              src={navLogo}
+              alt="Dumbbell logo"
+              width={27}
+              height={25}
+            />
+
+            <span className="font-(family-name:--primary-font) text-2xl text-(--primary-text-color)">
+              FITLOG
+            </span>
+          </Link>
+
+          {/* Desktop Menu */}
+          <div className="hidden items-center gap-10 sm:flex">
+            <Link
+              href="/"
+              className={`hover:text-(--common-color) ${
+                activeMenu === "/" ? "manuCurrentState" : ""
+              }`}>
+              Workout
+            </Link>
+
+            <Link
+              href="/my-plan"
+              className={`hover:text-(--common-color) ${
+                activeMenu === "/my-plan"
+                  ? "manuCurrentState"
+                  : ""
+              }`}>
+              My plan
+            </Link>
+          </div>
+
+          {/* Right Side */}
+          <div className="hidden items-center gap-3 sm:flex">
+            <Link
+              href="/my-plan"
+              className="flex items-center gap-2">
+              Plan
+              <span className="rounded-full bg-(--common-color) px-3 py-1 text-sm text-(--primary-background)">
+                0
+              </span>
+            </Link>
+
+            <Link
+              href="/my-plan"
+              className="flex items-center gap-2">
+              Saved
+              <span className="rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm">
+                0
+              </span>
+            </Link>
+          </div>
+
+          {/* mobile Right Side */}
+          <div className="flex items-center gap-4 sm:hidden">
+            <Link
+              href="/my-plan"
+              className="flex items-center gap-1 hover:text-(--common-color)">
+              Plan
+              <span className="rounded-full bg-(--common-color) px-2 py-1 text-xs text-(--primary-background)">
+                0
+              </span>
+            </Link>
+
+            <Link
+              href="/my-plan"
+              className="flex items-center gap-1 hover:text-(--common-color)">
+              Saved
+              <span className="rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)">
+                0
+              </span>
+            </Link>
+
+            <button
+              type="button"
+              onClick={() => handleHamburgerMenu(true)}
+              className="text-xl cursor-pointer">
+              <GiHamburgerMenu />
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`absolute right-4 top-full z-50 w-48 rounded-bl-2xl bg-(--secondary-background) px-4 py-4 shadow-lg sm:hidden ${
+            smallDevice ? "flex" : "hidden"
+          } flex-col gap-4 text-center`}>
+          <Link
+            href="/"
+            onClick={handleMenuClick}
             className={`hover:text-(--common-color) ${
               activeMenu === "/" ? "manuCurrentState" : ""
             }`}>
@@ -48,6 +126,7 @@ const Navbar = () => {
 
           <Link
             href="/my-plan"
+            onClick={handleMenuClick}
             className={`hover:text-(--common-color) ${
               activeMenu === "/my-plan"
                 ? "manuCurrentState"
@@ -56,81 +135,6 @@ const Navbar = () => {
             My plan
           </Link>
         </div>
-
-        {/* Right Side */}
-        <div className="hidden items-center gap-3 sm:flex">
-          <Link
-            href="/my-plan"
-            className="flex items-center gap-2">
-            Plan
-            <span className="rounded-full bg-(--common-color) px-3 py-1 text-sm text-(--primary-background)">
-              0
-            </span>
-          </Link>
-
-          <Link
-            href="/my-plan"
-            className="flex items-center gap-2">
-            Saved
-            <span className="rounded-full border-2 border-(--primary-text-color) px-3 py-1 text-sm">
-              0
-            </span>
-          </Link>
-        </div>
-
-        {/* mobile Right Side */}
-        <div className="flex items-center gap-4 sm:hidden">
-          <Link
-            href="/my-plan"
-            className="flex items-center gap-1 hover:text-(--common-color)">
-            Plan
-            <span className="rounded-full bg-(--common-color) px-2 py-1 text-xs text-(--primary-background)">
-              0
-            </span>
-          </Link>
-
-          <Link
-            href="/my-plan"
-            className="flex items-center gap-1 hover:text-(--common-color)">
-            Saved
-            <span className="rounded-full px-2 py-1 text-xs text-(--primary-text-color) border-2 border-(--primary-text-color)">
-              0
-            </span>
-          </Link>
-
-          <button
-            type="button"
-            onClick={() => handleHamburgerMenu(true)}
-            className="text-xl cursor-pointer">
-            <GiHamburgerMenu />
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`absolute right-4 top-full z-50 w-48 rounded-bl-2xl bg-(--secondary-background) px-4 py-4 shadow-lg sm:hidden ${
-          smallDevice ? "flex" : "hidden"
-        } flex-col gap-4 text-center`}>
-        <Link
-          href="/"
-          onClick={handleMenuClick}
-          className={`hover:text-(--common-color) ${
-            activeMenu === "/" ? "manuCurrentState" : ""
-          }`}>
-          Workout
-        </Link>
-
-        <Link
-          href="/my-plan"
-          onClick={handleMenuClick}
-          className={`hover:text-(--common-color) ${
-            activeMenu === "/my-plan"
-              ? "manuCurrentState"
-              : ""
-          }`}>
-          My plan
-        </Link>
       </div>
     </nav>
   );
