@@ -7,17 +7,45 @@ import TodaysPlanCard from "../components/Card/TodaysPlanCard";
 import { ExerciseDataType } from "../type/type";
 import SavedCard from "../components/Card/SavedCard";
 import Link from "next/link";
-import SortUi from "../components/SortUi";
 
 const MyPlanPage = () => {
+  // State to hold the current sort value
+  const [sortValue, setSortValue] =
+    useState<string>("duration");
+
   const [currentTab, setCurrentTab] =
     useState<string>("todaysPlanTab");
+
   // data loading form context.
   const dataState = useContext(ThemeContext);
   if (!dataState) {
     return [];
   }
   const { todaysPlan, savedData } = dataState;
+
+  // sorting function
+  function sortTheArray(arrayOfObj: ExerciseDataType[]) {
+    if (sortValue === "rating") {
+      return arrayOfObj.sort((a, b) => b.rating - a.rating);
+    } else if (sortValue === "duration") {
+      return arrayOfObj.sort(
+        (a, b) => a.duration - b.duration,
+      );
+    } else if (sortValue === "calories") {
+      return arrayOfObj.sort(
+        (a, b) => b.caloriesBurned - a.caloriesBurned,
+      );
+    }
+    return arrayOfObj;
+  }
+
+  const sortedTodaysPlan = sortTheArray(todaysPlan);
+  const sortedSaveData = sortTheArray(savedData);
+
+  console.log(sortedTodaysPlan)
+  console.log(sortedSaveData)
+
+
 
   return (
     // my plan page section
@@ -53,8 +81,8 @@ const MyPlanPage = () => {
             defaultChecked
           />
           <div className="tab-content p-6 max-h-max min-h-[300px]">
-            {todaysPlan.length !== 0 ? (
-              todaysPlan.map(
+            {sortedTodaysPlan.length !== 0 ? (
+              sortedTodaysPlan.map(
                 (todaysPlanData: ExerciseDataType) => (
                   <TodaysPlanCard
                     key={todaysPlanData.id}
@@ -89,9 +117,9 @@ const MyPlanPage = () => {
             className="tab bg-(--secondary-background) text-(--primary-text-color)"
             aria-label="Saved"
           />
-          <div className="tab-content p-6">
-            {savedData.length !== 0 ? (
-              savedData.map(
+          <div className="tab-content p-6 max-h-max min-h-[300px]">
+            {sortedSaveData.length !== 0 ? (
+              sortedSaveData.map(
                 (saveDataObj: ExerciseDataType) => (
                   <SavedCard
                     key={saveDataObj.id}
@@ -125,11 +153,30 @@ const MyPlanPage = () => {
           <span className="text-[11px] sm:text-[14px]">
             Sort By:
           </span>{" "}
-          {/* <SortUi /> */}
+          <select
+            defaultValue={sortValue}
+            onChange={(e) => setSortValue(e.target.value)}
+            className="select select-secondary bg-(--secondary-background) border-none outline-none w-30 hover:text-(--common-color) ">
+            <option
+              className="border border-(--border-color) my-1"
+              value={"rating"}>
+              Rating
+            </option>
+            <option
+              className="border border-(--border-color) my-1"
+              value={"duration"}>
+              Duration
+            </option>
+            <option
+              className="border border-(--border-color) my-1"
+              value={"calories"}>
+              Calories
+            </option>
+          </select>
         </div>
       </div>
     </section>
   );
-};
+};;
 
 export default MyPlanPage;

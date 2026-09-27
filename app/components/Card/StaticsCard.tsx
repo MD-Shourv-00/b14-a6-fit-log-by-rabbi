@@ -2,8 +2,8 @@ import { ExerciseDataType } from "@/app/type/type";
 import React from "react";
 
 interface PropsType {
-  todaysPlan: ExerciseDataType[];
-  savedData: ExerciseDataType[];
+  todaysPlan?: ExerciseDataType[];
+  savedData?: ExerciseDataType[];
 }
 
 const StaticsCard = ({
