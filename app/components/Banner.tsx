@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import bannerImg from "@/app/assets/banner.png";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -30,9 +31,11 @@ const Banner = () => {
             </p>
 
             {/* Button */}
-            <button className="cursor-pointer rounded-[5px] bg-(--common-color) px-5 py-3 text-[12px] font-bold uppercase text-(--primary-background) transition-opacity hover:opacity-90 ">
-              Browse Workouts
-            </button>
+            <Link href={'#library'}>
+              <button className="cursor-pointer rounded-[5px] bg-(--common-color) px-5 py-3 text-[12px] font-bold uppercase text-(--primary-background) transition-opacity hover:opacity-90 ">
+                Browse Workouts
+              </button>
+            </Link>
           </div>
         </div>
       </div>

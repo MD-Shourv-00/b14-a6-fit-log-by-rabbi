@@ -29,7 +29,9 @@ export default async function Home() {
       <Banner />
 
       {/* the library section */}
-      <section className="container mx-auto my-10">
+      <section
+        id="library"
+        className="container mx-auto my-10">
         {/* short title */}
         <div className="max-lg:text-center mb-5">
           <h2 className="font-(family-name:--primary-font) text-3xl text-(--primary-text-color) font-bold my-3">

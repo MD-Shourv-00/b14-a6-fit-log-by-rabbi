@@ -2512,10 +2512,6 @@
     overflow: hidden;
   }
 
-  .rounded {
-    border-radius: .25rem;
-  }
-
   .rounded-2xl {
     border-radius: var(--radius-2xl);
   }
@@ -2624,76 +2620,12 @@
     background-color: var(--primary-background);
   }
 
-  .bg-\(--secondary\) {
-    background-color: var(--secondary);
-  }
-
-  .bg-\(--secondary-\) {
-    background-color: var(--secondary-);
-  }
-
-  .bg-\(--secondary-back\) {
-    background-color: var(--secondary-back);
-  }
-
   .bg-\(--secondary-background\) {
     background-color: var(--secondary-background);
   }
 
-  .bg-\[\#8c957ace\] {
-    background-color: #8c957ace;
-  }
-
-  .bg-\[\#9bbd21c4\] {
-    background-color: #9bbd21c4;
-  }
-
-  .bg-\[\#9bbd21ce\] {
-    background-color: #9bbd21ce;
-  }
-
-  .bg-\[\#9bbd21ed\] {
-    background-color: #9bbd21ed;
-  }
-
-  .bg-\[\#9bbd2185\] {
-    background-color: #9bbd2185;
-  }
-
-  .bg-\[\#808e4ece\] {
-    background-color: #808e4ece;
-  }
-
-  .bg-\[\#\] {
-    background-color: #;
-  }
-
-  .bg-\[\#b3b6a9ce\] {
-    background-color: #b3b6a9ce;
-  }
-
-  .bg-\[\#c2f800\] {
-    background-color: #c2f800;
-  }
-
-  .bg-\[\#c2f800a7\] {
-    background-color: #c2f800a7;
-  }
-
-  .bg-\[\#c2f800c4\] {
-    background-color: #c2f800c4;
-  }
-
-  .bg-\[\#e4f7c0ce\] {
-    background-color: #e4f7c0ce;
-  }
-
   .bg-\[\#e4ffaece\] {
     background-color: #e4ffaece;
-  }
-
-  .bg-\[\#ffffffce\] {
-    background-color: #ffffffce;
   }
 
   .object-cover {
@@ -3127,6 +3059,10 @@
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
