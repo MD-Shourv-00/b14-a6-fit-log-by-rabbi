@@ -74,10 +74,6 @@ const SavedCard = ({ saveDataObj }: PropsType) => {
               View Details
             </button>
           </Link>
-          <button className="cursor-pointer max-sm:text-[12px] flex items-center gap-1 rounded-full bg-(--common-color) text-[12px] font-bold text-(--primary-background) py-2 px-2">
-            <FiCheck />
-            Mark as Done
-          </button>
         </div>
 
         {/* remove btn */}

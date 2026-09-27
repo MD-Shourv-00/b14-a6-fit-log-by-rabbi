@@ -2,6 +2,7 @@ import { ThemeContext } from "@/app/context/page";
 import { ExerciseDataType } from "@/app/type/type";
 import { useContext } from "react";
 import { FiX } from "react-icons/fi";
+import { toast } from "react-toastify";
 
 interface PropsType {
   todaysPlanData?: ExerciseDataType;
@@ -32,6 +33,7 @@ const RemoveCardBtn = ({
       );
 
       setTodaysPlan([...newTodaysPlan]);
+      toast.success(`Removed ${todaysPlanData.name} from Today's Plan Tab`)
     }
 
     if (saveDataObj) {
@@ -40,6 +42,9 @@ const RemoveCardBtn = ({
       );
 
       setSavedData([...newSaveData]);
+      toast.success(
+        `Removed ${saveDataObj.name} form Saved Tab`,
+      );
     }
   }
   return (

@@ -8,6 +8,8 @@ import {
   FiStar,
 } from "react-icons/fi";
 import RemoveCardBtn from "./buttons/RemoveCardBtn";
+import { useState } from "react";
+import { IoMdDoneAll } from "react-icons/io";
 
 interface PropsType {
   todaysPlanData: ExerciseDataType;
@@ -23,6 +25,12 @@ const TodaysPlanCard = ({ todaysPlanData }: PropsType) => {
     caloriesBurned,
     rating,
   } = todaysPlanData;
+
+  // handleMarkAsDoneBtn
+  const [isDoneBtnClicked, setIsDoneBtnClicked] =
+    useState<boolean>(false);
+
+    console.log(isDoneBtnClicked)
 
   return (
     <div className="flex w-full items-center rounded-[12px] border border-(--secondary-background) bg-(--primary-background) px-3 justify-between max-sm:flex-col my-7 ">
@@ -74,10 +82,22 @@ const TodaysPlanCard = ({ todaysPlanData }: PropsType) => {
               View Details
             </button>
           </Link>
-          <button className="cursor-pointer max-sm:text-[12px] flex items-center gap-1 rounded-full bg-(--common-color) text-[12px] font-bold text-(--primary-background) py-2 px-2">
-            <FiCheck />
-            Mark as Done
-          </button>
+          {/* mark as done */}
+          {isDoneBtnClicked ? (
+            <button
+              className="cursor-pointer max-sm:text-[12px] flex items-center gap-1 rounded-full bg-[#e4ffaece] text-[12px] font-bold text-(--primary-background) py-2 px-5"
+              disabled>
+              <IoMdDoneAll />
+              Done
+            </button>
+          ) : (
+            <button
+              onClick={() => setIsDoneBtnClicked(true)}
+              className={`cursor-pointer max-sm:text-[12px] flex items-center gap-1 rounded-full bg-(--common-color) text-[12px] font-bold text-(--primary-background) py-2 px-2`}>
+              <FiCheck />
+              Mark as Done
+            </button>
+          )}
         </div>
 
         {/* remove btn */}
