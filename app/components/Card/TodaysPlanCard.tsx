@@ -77,7 +77,7 @@ const TodaysPlanCard = ({ todaysPlanData }: PropsType) => {
       <div className="flex items-center gap-7 my-3">
         <div className="flex gap-3 items-center max-md:flex-col max-sm:flex-row">
           {" "}
-          <Link href={`/${id}`}>
+          <Link href={`/workouts/${id}`}>
             <button className="cursor-pointer max-sm:text-[12px] rounded-full border border-(--secondary-background) px-4 py-2 text-[12px] text-(--secondary-text-color) transition-colors hover:text-(--primary-text-color)">
               View Details
             </button>

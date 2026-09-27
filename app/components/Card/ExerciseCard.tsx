@@ -22,7 +22,7 @@ const ExerciseCard = ({ exerDataObj }: PropsType) => {
   } = exerDataObj;
 
   return (
-    <Link href={`/${id}`}>
+    <Link href={`/workouts/${id}`}>
       <div className="w-full overflow-hidden rounded-[18px] border-2 border-(--secondary-background) bg-(--primary-background) font-(family-name:--primary-font)border-2 hover:border-(--common-color) duration-500 ease-in-out">
         {/* Card image */}
         <div className="h-[250px] w-full overflow-hidden">

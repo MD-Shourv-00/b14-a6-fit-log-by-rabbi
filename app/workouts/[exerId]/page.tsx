@@ -1,21 +1,19 @@
-import DetailsExerciseCard from "../components/Card/DetailsExerciseCard";
+import { notFound } from "next/navigation";
+import DetailsExerciseCard from "../../components/Card/DetailsExerciseCard";  
 
-async function singleExerciseDataFetching(getDynamicPath: string) {
-  try {
+async function singleExerciseDataFetching(
+  getDynamicPath: string,
+) {
     const res = await fetch(
       `https://api.api-store.workers.dev/api/fitlog/${getDynamicPath}`,
     );
 
     if (!res.ok) {
-      throw new Error(`Http error status: ${res.status}`);
+      notFound();
     }
 
     return res.json();
-  } catch (error) {
-    console.log(`Data fetching fail: ${error}`);
-
-    return [];
-  }
+ 
 }
 
 interface PropsType {
